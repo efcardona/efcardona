@@ -1,4 +1,3 @@
-```mermaid
 erDiagram
     UGA ||--|| UGA_LOCATION : tiene
     UGA ||--|| UGA_CREATION : registra
@@ -145,3 +144,7 @@ erDiagram
     UGA_POLYGON_POINT {
         String UGA_CODE FK
         Integer POLYGON_SORT_ORDER
+        Integer POINT_SORT_ORDER
+        Decimal LATITUDE
+        Decimal LONGITUDE
+    }
