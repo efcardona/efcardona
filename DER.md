@@ -1,16 +1,15 @@
-```mermaid
 erDiagram
-    UGA ||--|| UGA_LOCATION : "tiene"
-    UGA ||--|| UGA_CREATION : "registra"
-    UGA ||--oM UGA_COMPLEMENTARY_INFORMATION : "contiene"
-    UGA ||--oM UGA_BACKING_INSTRUMENT : "respaldada_por"
-    UGA ||--|| UGA_STRUCTURE : "evalua"
-    UGA ||--|| UGA_INSTALLATIONS : "dispone"
-    UGA ||--|| UGA_CAPACITIES : "mide"
-    UGA ||--oM UGA_RESPONSIBLE : "asignada_a"
-    UGA ||--oM UGA_CUP_RELATION : "vincula"
-    UGA ||--oM UGA_POLYGON : "delimitada_por"
-    UGA ||--oM UGA_POLYGON_POINT : "georreferenciada_por"
+    UGA ||--|| UGA_LOCATION : tiene
+    UGA ||--|| UGA_CREATION : registra
+    UGA ||--|{ UGA_COMPLEMENTARY_INFORMATION : contiene
+    UGA ||--|{ UGA_BACKING_INSTRUMENT : respaldada_por
+    UGA ||--|| UGA_STRUCTURE : evalua
+    UGA ||--|| UGA_INSTALLATIONS : dispone
+    UGA ||--|| UGA_CAPACITIES : mide
+    UGA ||--|{ UGA_RESPONSIBLE : asignada_a
+    UGA ||--|{ UGA_CUP_RELATION : vincula
+    UGA ||--|{ UGA_POLYGON : delimitada_por
+    UGA ||--|{ UGA_POLYGON_POINT : georreferenciada_por
 
     UGA {
         String UGA_CODE PK
