@@ -1,3 +1,4 @@
+```mermaid
 erDiagram
     UGA ||--|| UGA_LOCATION : tiene
     UGA ||--|| UGA_CREATION : registra
@@ -148,3 +149,4 @@ erDiagram
         Decimal LATITUDE
         Decimal LONGITUDE
     }
+```
