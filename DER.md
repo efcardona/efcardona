@@ -1,0 +1,152 @@
+```mermaid
+erDiagram
+    UGA ||--|| UGA_LOCATION : "tiene"
+    UGA ||--|| UGA_CREATION : "registra"
+    UGA ||--oM UGA_COMPLEMENTARY_INFORMATION : "contiene"
+    UGA ||--oM UGA_BACKING_INSTRUMENT : "respaldada_por"
+    UGA ||--|| UGA_STRUCTURE : "evalua"
+    UGA ||--|| UGA_INSTALLATIONS : "dispone"
+    UGA ||--|| UGA_CAPACITIES : "mide"
+    UGA ||--oM UGA_RESPONSIBLE : "asignada_a"
+    UGA ||--oM UGA_CUP_RELATION : "vincula"
+    UGA ||--oM UGA_POLYGON : "delimitada_por"
+    UGA ||--oM UGA_POLYGON_POINT : "georreferenciada_por"
+
+    UGA {
+        String UGA_CODE PK
+        Boolean UGA_ACTIVE
+        String UGA_STATUS
+        String UGA_STATUS_REASON
+        Date UGA_STATUS_CHANGE_DATE
+        String UGA_MAIN_DESTINATION
+        String UGA_PARENT
+        String CEA_CODE
+        String UGA_TYPE_CODE
+        String UGA_TYPE_DESCRIPTION
+        String UGA_USE_TYPE_CODE
+        String UGA_USE_TYPE_DESCRIPTION
+        String UGA_BUILDING_TYPE_CODE
+        String UGA_BUILDING_TYPE_DESCRIPTION
+        String UGA_OCCUPATION_CODE
+        String UGA_OCCUPATION_DESCRIPTION
+        String UGA_TERRITORIAL_OBJECT_ID
+        Date UGA_USAGE_START_DATE
+        Date UGA_USAGE_END_DATE
+        String UGA_OBSERVATIONS
+    }
+
+    UGA_LOCATION {
+        String UGA_CODE FK
+        String UGA_STREET
+        Integer UGA_NUMBER
+        String UGA_FLOOR
+        String UGA_APARTMENT
+        String UGA_FUNCTIONAL_UNIT
+        String UGA_SECTOR
+        String UGA_LOCALITY_CODE
+        String UGA_LOCALITY_DESCRIPTION
+        String UGA_LOCATION_COMPLEMENTARY_INFORMATION
+        String UGA_LOCATION_DESCRIPTION
+    }
+
+    UGA_CREATION {
+        String UGA_CODE FK
+        String UGA_CREATION_NORM_TYPE_CODE
+        String UGA_CREATION_NORM_TYPE_DESCRIPTION
+        String UGA_CREATION_RULE
+        Date UGA_CREATION_DATE
+    }
+
+    UGA_COMPLEMENTARY_INFORMATION {
+        String UGA_CODE FK
+        String UGA_COMPLEMENTARY_INFORMATION_TYPE
+        String UGA_COMPLEMENTARY_INFORMATION_DATA
+    }
+
+    UGA_BACKING_INSTRUMENT {
+        String UGA_CODE FK
+        String UGA_AGREEMENT_TYPE
+        Date UGA_SIGNATURE_DATE
+        Date UGA_START_DATE
+        Date UGA_END_DATE
+        String UGA_CONTRACT_SCSIR_NUMBER
+        String UGA_AGREEMENT_STATUS
+    }
+
+    UGA_STRUCTURE {
+        String UGA_CODE FK
+        String UGA_STRUCTURE_CHARACTERISTIC_CODE
+        String UGA_STRUCTURE_CHARACTERISTIC_DESCRIPTION
+        String UGA_STRUCTURE_MATERIAL_CODE
+        String UGA_STRUCTURE_MATERIAL_DESCRIPTION
+        String UGA_STRUCTURE_PATHOLOGY_CODE
+        String UGA_STRUCTURE_PATHOLOGY_DESCRIPTION
+        String UGA_STRUCTURE_GENERAL_STATUS
+        String UGA_STRUCTURE_TERMINATION_CODE
+        String UGA_STRUCTURE_TERMINATION_DESCRIPTION
+        String UGA_STRUCTURE_FLOOR_PATHOLOGY
+        String UGA_STRUCTURE_FLOOR_CEILING_STATUS
+        String UGA_STRUCTURE_ENCLOSURES_OBSERVATIONS
+        String UGA_STRUCTURE_FLOORS_CEILING_OBSERVATIONS
+    }
+
+    UGA_INSTALLATIONS {
+        String UGA_CODE FK
+        String UGA_ELECTRICITY_TYPE_CODE
+        String UGA_ELECTRICITY_TYPE_DESCRIPTION
+        String UGA_GAS_TYPE_CODE
+        String UGA_GAS_TYPE_DESCRIPTION
+        String UGA_HOTWATER_TYPE_CODE
+        String UGA_HOTWATER_TYPE_DESCRIPTION
+        String UGA_HEATING_TYPE_CODE
+        String UGA_HEATING_TYPE_DESCRIPTION
+        String UGA_CONNECTIVITY_TYPE_CODE
+        String UGA_CONNECTIVITY_TYPE_DESCRIPTION
+    }
+
+    UGA_CAPACITIES {
+        String UGA_CODE FK
+        Integer UGA_PEOPLE_CAPACITY
+        Integer UGA_WORK_POSITIONS_COUNT
+        Integer UGA_CLASSROOMS_COUNT
+        Integer UGA_BEDS_COUNT
+    }
+
+    UGA_RESPONSIBLE {
+        String UGA_CODE FK
+        String UGA_RESPONSIBLE_AREA
+        String UGA_MANAGEMENT_LEVEL_CODE
+        String UGA_MANAGEMENT_LEVEL_DESCRIPTION
+        String UGA_RESPONSIBLE_NAME
+        String UGA_RESPONSIBLE_EMAIL
+        String UGA_RESPONSIBLE_PHONE
+    }
+
+    UGA_CUP_RELATION {
+        String UGA_CODE FK
+        String CUP_CODE
+        String RELATION_TYPE
+        Decimal ASSIGNED_LAND
+        Decimal ASSIGNED_COVERED
+        Decimal ASSIGNED_SEMI_COVERED
+        Decimal ASSIGNED_UNCOVERED
+        Decimal EFFECTIVE_LAND
+        Decimal EFFECTIVE_COVERED
+        Decimal EFFECTIVE_SEMI_COVERED
+        Decimal EFFECTIVE_UNCOVERED
+    }
+
+    UGA_POLYGON {
+        String UGA_CODE FK
+        String POLYGON_DESCRIPTION
+        Integer POLYGON_SORT_ORDER
+    }
+
+    UGA_POLYGON_POINT {
+        String UGA_CODE FK
+        Integer POLYGON_SORT_ORDER
+        Integer POINT_SORT_ORDER
+        Decimal LATITUDE
+        Decimal LONGITUDE
+    }
+```
