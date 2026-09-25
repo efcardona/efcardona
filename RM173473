@@ -1,11 +1,3 @@
-# Módulo de Facturación - Casos de Uso y Diseño Funcional
-**Referencia:** RM#173473  
-**Proyecto:** H5 - Gestión de facturas | Autocompletado del campo Observaciones  
-
----
-
-## 1. Diagrama de Casos de Uso (Mermaid)
-
 ```mermaid
 graph TD
     User["Usuario Operador"] --> CU02["CU-02: Edición Manual y Persistencia"]
