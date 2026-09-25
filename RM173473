@@ -1,0 +1,7 @@
+graph TD
+    User["Usuario Operador"] --> CU02["CU-02: Edición Manual y Persistencia"]
+    System["SIGAF / Sistema"] --> CU01["CU-01: Detección y Precarga Automática"]
+    
+    subgraph Módulo de Facturación
+        CU01 --> CU02
+    end
